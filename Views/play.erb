@@ -1,1 +1,20 @@
-This game is being played between <%= @name1 %> and <%= @name2 %>
+This game is being played between <%= session[:name1] %> and <%= session[:name2] %> <br>
+
+Player 1: <%= session[:name1] %><br>
+Player 2: <%= session[:name2] %><br>
+<br>
+
+<%= session[:name1] %> score <%= session[:name1HP] %>
+<form action="/scores" method="post" >
+  <input type="text" name="name1HP">
+  <input type="submit" value="Attack">
+</form>
+
+<br>
+<br>
+
+<%= session[:name2] %> score <%= session[:name2HP] %>
+<form action="/scores" method="post" >
+  <input type="text" name="name2HP">
+  <input type="submit" value="Attack">
+</form>

@@ -15,3 +15,18 @@ feature 'Enter players names' do
     expect(page).to have_content 'Kar Ho' && 'Freddie'
   end
 end
+
+
+feature 'Check hit points' do
+  scenario 'Look up a players hit points' do
+    visit('/')
+    fill_in 'name1', with: 'Kar Ho'
+    fill_in 'name2', with: 'Freddie'
+    click_button('Submit')
+
+    # starting new feature test
+    click_button 'Attack player 1'
+    expect('Player 1 HP').to eq 90
+
+  end
+end
